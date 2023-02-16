@@ -11,16 +11,21 @@
 :root {
     --clr-primary: #000;
     --bg-secondary: #fff;
+    --bg-btn-nav: rgb(166, 107, 54);
+    --bg-btn-nav-hover: rgb(142, 84, 33);
     --bg-mobile-nav: rgb(35 35 35 / 98%);
     --ff-logo: LogoFont;
     --fs-logo: 3em;
-    --fs-slogan: 2rem;
+    --fs-slogan: 3.5rem;
     --clr-secondary: #fff;
     --fs-nav-items: 1em;
     --p-nav-items: 3rem;
     --p-navbar: 1.8em 15em 1.8em 15em;
+    --p-about-us: 0em 10em 0em 10em;
     --p-btn-navbar: 5rem;
-    --slogan-img-height: 6rem;
+    --slogan-img-height: 8.5rem;
+    --slogan-padding: 2.5em;
+    --fs-about-us: 2em;
 }
 
 
@@ -40,11 +45,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: sticky;
 }
 
 .navbar li:not(:last-child) {
     margin-right: var(--p-nav-items);
+    position: relative;
+    display: inline-block;
+}
+
+.navbar li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg-btn-nav);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar li:not(:last-child):hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .navbar li {
@@ -68,37 +93,47 @@
     align-items: center;
 }
 
-.btn {
+.nav-items .btn {
     margin-left: var(--p-btn-navbar);
-    background-color: rgb(166, 107, 54);
+}
+
+.btn {
+    background-color: var(--bg-btn-nav);
     padding: 15px;
     border-radius: 10px;
     color: var(--clr-secondary);
+    transition: transform 0.25s ease-out;
+}
+
+.btn:hover {
+    background-color: var(--bg-btn-nav-hover);
 }
 
 
 /* SLOGAN */
 
 .slogan {
-    padding-top: 10px;
     font-size: var(--fs-slogan);
     font-style: italic;
     text-align: center;
-    padding-top: 2.5em;
+    padding-top: var(--slogan-padding);
+    /* padding-bottom: var(--slogan-padding); */
     display: flex;
     flex-direction: row;
     justify-content: center;
+    animation: appear 1s;
 }
 
-.slogan img:not(.inverse) {
+.slogan img {
     height: var(--slogan-img-height);
+}
+
+.left {
     transform: translate(50%, -20%);
 }
 
-.inverse {
-    height: var(--slogan-img-height);
-    transform-origin: left;
-    transform: translate(-10%, 30%) rotate(-90deg);
+.right {
+    transform: translate(-50%, -20%);
 }
 
 .slogan span {
@@ -194,11 +229,15 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     height: 0px;
     text-transform: capitalize;
     transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateX(100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 }
 
 .open {
-    height: 0% !important;
-    opacity: 0 !important;
+    transform: translateX(0%);
 }
 
 .mobile-nav li {
@@ -216,6 +255,57 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 
+/* ABOUT US */
+
+.about-us {
+    padding: var(--p-about-us);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fs-about-us);
+    text-align: center;
+    font-style: italic;
+    opacity: 0;
+    animation: appear 1s forwards;
+    animation-delay: .5s;
+}
+
+
+/* SERVICES */
+
+.services {
+    /* padding: var(--p-navbar); */
+    padding-top: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.services .header-text {
+    opacity: 0;
+    animation: appear-side 1s forwards;
+    animation-delay: 1.2s;
+}
+
+.services li {
+    opacity: 0;
+    padding-top: 1.2rem;
+    font-size: 1.5rem;
+    animation: appear-side 1s forwards;
+    animation-delay: 1.4s;
+}
+
+.services li:first-child {
+    padding-top: 2rem;
+}
+
+body {
+    height: 200vh;
+}
+
+
 /* UTILITY CLASSES */
 
 .flex-full-center {
@@ -227,6 +317,21 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 .flex-vertical-center {
     display: flex;
     align-items: center;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.header-text {
+    font-size: 3rem;
+    /* font-weight: bold; */
+    font-style: italic;
 }
 
 
@@ -242,6 +347,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 @media only screen and (max-width: 1375px) {
      :root {
         --p-navbar: 1.8em 5em 1.8em 5em;
+        --fs-about-us: 1.5em;
+        --p-about-us: 0em 8em 0em 8em;
     }
 }
 
@@ -265,6 +372,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 @media only screen and (max-width: 1024px) {
      :root {
         --p-navbar: 1em 0em 1em 0em;
+        --fs-about-us: 1.2em;
     }
     .nav-items {
         display: none;
@@ -284,17 +392,57 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 }
 
+@media only screen and (max-width: 1135px) {
+     :root {
+        --fs-slogan: 2rem !important;
+        --slogan-img-height: 6rem !important;
+        --p-about-us: 0em 12em 0em 12em;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+     :root {
+        --p-about-us: 0em 6em 0em 6em;
+    }
+}
+
 @media only screen and (max-width: 625px) {
      :root {
-        --fs-slogan: 1.3rem;
-        --slogan-img-height: 3.5rem;
+        --fs-slogan: 1.3rem !important;
+        --fs-about-us: 1rem;
+        --slogan-img-height: 3.5rem !important;
     }
 }
 
 @media only screen and (max-width: 395px) {
      :root {
-        --fs-slogan: 1rem;
-        --slogan-img-height: 3rem;
+        --fs-slogan: 1rem !important;
+        --slogan-img-height: 3rem !important;
+    }
+}
+
+
+/* ANIMATIONS */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes appear-side {
+    from {
+        opacity: 0;
+        transform: translateX(-40%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
     }
 }
 
@@ -392,6 +540,10 @@ video {
 
 a {
     text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 
