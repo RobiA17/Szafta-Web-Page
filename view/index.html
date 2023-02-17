@@ -1,86 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="../script/main.js"></script>
     <title>Szafta Temetkezes</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="header">
-        <div class="navbar">
-            <!-- logo -->
-            <div class="logo">
-                <a href="./index.html">Szafta</a>
-            </div>
-
-            <input class="checkbox" type="checkbox" name="" id="" />
-            <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-
-            <!-- navigation items -->
-            <div class="nav-items">
-                <ul>
-                    <li>Ajánlataink</li>
-                    <li>Koporsók</li>
-                    <li>Sírkövek</li>
-                    <li class="btn unselectable">Vegye fel velünk a kapcsolatot!</li>
-                </ul>
-            </div>
+      <div class="navbar">
+        <!-- logo -->
+        <div class="logo">
+          <a href="./index.html">Szafta</a>
         </div>
+
+        <input class="checkbox" type="checkbox" name="" id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+
+        <!-- navigation items -->
+        <div class="nav-items">
+          <ul>
+            <li><a href="#services">Ajánlataink</a></li>
+            <li><a href="#coffin">Koporsók</a></li>
+            <li>Sírkövek</li>
+            <li class="btn unselectable">Vegye fel velünk a kapcsolatot!</li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <!-- mobile navigation -->
     <div class="mobile-nav">
-        <div class="mobile-nav-items">
-            <ul>
-                <li>Ajánlataink</li>
-                <li>Koporsók</li>
-                <li>Sírkövek</li>
-                <li class="btn unselectable">Vegye fel velünk a kapcsolatot!</li>
-            </ul>
-        </div>
+      <div class="mobile-nav-items">
+        <ul>
+          <li><a href="#services">Ajánlataink</a></li>
+          <li><a href="#coffin">Koporsók</a></li>
+          <li>Sírkövek</li>
+          <li class="btn unselectable">Vegye fel velünk a kapcsolatot!</li>
+        </ul>
+      </div>
     </div>
 
     <!-- slogan section -->
     <section class="slogan unselectable">
-        <img class="left" src="../assets/images/corner-left.png" alt="sarok">
-        <p>Mi a bajban Ön mellett állunk!</p>
-        <img class="right" src="../assets/images/corner-right.png" alt="sarok">
+      <img class="left" src="../assets/images/corner-left.png" alt="sarok" />
+      <p>Mi a bajban Ön mellett állunk!</p>
+      <img class="right" src="../assets/images/corner-right.png" alt="sarok" />
     </section>
 
     <!-- about us section -->
 
     <section class="about-us">
-        Méltósággal és diszkréten bánunk az elhunyt személlyel, mert úgy gondoljuk, hogy a végtisztesség minden embernek veleszületett joga.
+      Méltósággal és diszkréten bánunk az elhunyt személlyel, mert úgy
+      gondoljuk, hogy a végtisztesség minden embernek veleszületett joga.
     </section>
 
     <!-- services -->
 
-    <section class="services">
-        <div class="header-text">
-            Ajánlataink
-        </div>
+    <section class="services" id="services">
+      <div class="header-text">Ajánlataink</div>
 
-        <ul>
-            <li>Gyászjelentés elkészítése</li>
-            <li>Elhunyt elszállítása</li>
-            <li>Koszorúk, koporsódíszek élővirágból</li>
-            <li>Padmaly lap betonból</li>
-            <li>Sírásás és hantolás</li>
-            <li>Sírkeretek összerakésa</li>
-            <li>Temetkezési segély intézése Ön helyett</li>
-        </ul>
-
+      <ul>
+        <li>Koporsók széles választékon</li>
+        <li>Gyászjelentés elkészítése</li>
+        <li>Elhunyt elszállítása</li>
+        <li>Koszorúk, koporsódíszek élővirágból</li>
+        <li>Padmaly lap betonból</li>
+        <li>Sírásás és hantolás</li>
+        <li>Sírkeretek összerakésa</li>
+        <li>Temetkezési segély intézése Ön helyett</li>
+      </ul>
     </section>
 
-</body>
+    <!-- coffin -->
+    <section class="coffin" id="coffin">
+      <!-- slider -->
+      <div class="img-slider-container">
+        <div class="img-slider">
+          <!-- prev -->
+          <div class="prev-button" id="prev">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <!-- slides -->
+          <div class="slides" id="coffin-slides"></div>
+          <!-- next -->
+          <div class="next-button" id="next">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+        <div class="pricing">
+          <div class="header-text">Koporsók</div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+            accusamus reiciendis sequi magni ab numquam nesciunt, ex
+            perspiciatis aliquam tempore modi voluptates. Earum reiciendis et
+            quas distinctio quo fugit alias.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <div style="height: 500px"></div>
+  </body>
 </html>
