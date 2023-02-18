@@ -20,7 +20,7 @@
     --clr-secondary: #fff;
     --fs-nav-items: 1em;
     --p-nav-items: 3rem;
-    --p-navbar: 1.8em 15em 1.8em 15em;
+    --p-navbar: 1.8em 10em 1.8em 10em;
     --p-about-us: 0em 10em 0em 10em;
     --p-btn-navbar: 5rem;
     --slogan-img-height: 8.5rem;
@@ -31,6 +31,7 @@
     --p-between-sections: 8rem;
     --img-coffin-hight: 45em;
     --img-coffin-width: 400px;
+    --pidgeon-height-width: 10rem;
 }
 
 
@@ -278,6 +279,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     opacity: 0;
     animation: appear 1s forwards;
     animation-delay: .5s;
+    position: relative;
 }
 
 
@@ -290,6 +292,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    position: relative;
 }
 
 .services .header-text {
@@ -325,21 +328,58 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     background: var(--bg-btn-nav) !important;
 }
 
-.coffin {
+.coffin,
+.gravestone,
+.wreath {
     padding-top: var(--p-between-sections);
-    padding-bottom: var(--p-between-sections);
-    /* padding-bottom: 2rem; */
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
+    position: relative;
 }
 
 .pricing {
-    width: 30%;
     text-align: start;
+    font-size: var(--fs-services-li);
+    opacity: 0;
+    animation: appear .5s forwards;
+    animation-delay: 2.2s;
+    position: relative;
+    height: fit-content;
+}
+
+.pricing .header-text {
+    margin-bottom: 1em;
+}
+
+li>ul {
+    font-style: italic;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+li>ul li:not(:last-child) {
+    padding-bottom: 5px;
+}
+
+.pricing>ul>li {
+    padding-bottom: 15px;
+}
+
+.pricing>ul>li>span {
+    font-style: italic;
+}
+
+
+/* gravesoten */
+
+.gravestone .img-slider-container {
+    flex-direction: row-reverse;
 }
 
 
@@ -348,7 +388,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 .img-slider-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
     gap: 5rem;
 }
@@ -357,6 +397,9 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     position: relative;
     height: var(--img-coffin-hight);
     width: var(--img-coffin-width);
+    opacity: 0;
+    animation: appear-side .5s forwards;
+    animation-delay: 2.2s;
 }
 
 .slides>* {
@@ -443,6 +486,41 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     background-color: var(--bg-btn-nav);
 }
 
+.spacer {
+    margin-top: var(--p-between-sections);
+    background-image: url(../assets/images/section-end2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 3rem;
+    width: 100%;
+    opacity: 0;
+    animation: appear-side .5s forwards;
+    animation-delay: .8s;
+}
+
+.pidgeon {
+    position: absolute;
+    background-image: url(../assets/images/pidgeon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: var(--pidgeon-height-width);
+    width: var(--pidgeon-height-width);
+    left: 5%;
+    top: 50%;
+    opacity: 0;
+    animation: appear-side 1s forwards;
+    animation-delay: 2s;
+}
+
+.mirror {
+    background-image: url(../assets/images/pidgeon-flipped.png);
+    right: 5%;
+    left: auto;
+    animation-name: appear-side-right;
+}
+
 
 /* RESPONSIVENESS */
 
@@ -514,6 +592,26 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 }
 
+@media only screen and (max-width: 970px) {
+    .img-slider-container {
+        flex-direction: column-reverse !important;
+        align-items: center;
+    }
+    .pricing {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 725px) {
+     :root {
+        --pidgeon-height-width: 5rem;
+    }
+}
+
 @media only screen and (max-width: 700px) {
      :root {
         --p-about-us: 0em 6em 0em 6em;
@@ -533,10 +631,23 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 }
 
+@media only screen and (max-width: 570px) {
+     :root {
+        --fs-logo: 2em;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+     :root {
+        --pidgeon-height-width: 3rem;
+    }
+}
+
 @media only screen and (max-width: 395px) {
      :root {
         --fs-slogan: 1rem !important;
         --slogan-img-height: 3rem !important;
+        --fs-logo: 1.5em;
     }
 }
 
@@ -558,6 +669,17 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     from {
         opacity: 0;
         transform: translateX(-40%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes appear-side-right {
+    from {
+        opacity: 0;
+        transform: translateX(40%);
     }
     to {
         opacity: 1;

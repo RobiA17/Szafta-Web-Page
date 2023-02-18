@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- TODO: add more meta tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="../styles/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="../script/main.js"></script>
-    <title>Szafta Temetkezes</title>
+    <title>Szafta Temetkezés</title>
   </head>
 
   <body>
@@ -19,7 +20,7 @@
       <div class="navbar">
         <!-- logo -->
         <div class="logo">
-          <a href="./index.html">Szafta</a>
+          <a href="./index.html">Szafta Temetkezés</a>
         </div>
 
         <input class="checkbox" type="checkbox" name="" id="" />
@@ -34,7 +35,8 @@
           <ul>
             <li><a href="#services">Ajánlataink</a></li>
             <li><a href="#coffin">Koporsók</a></li>
-            <li>Sírkövek</li>
+            <li><a href="#gravestone">Sírkövek</a></li>
+            <li><a href="#wreath">Koszorúk</a></li>
             <li class="btn unselectable">Vegye fel velünk a kapcsolatot!</li>
           </ul>
         </div>
@@ -46,7 +48,8 @@
         <ul>
           <li><a href="#services">Ajánlataink</a></li>
           <li><a href="#coffin">Koporsók</a></li>
-          <li>Sírkövek</li>
+          <li><a href="#gravestone">Sírkövek</a></li>
+          <li><a href="#wreath">Koszorúk</a></li>
           <li class="btn unselectable">Vegye fel velünk a kapcsolatot!</li>
         </ul>
       </div>
@@ -58,13 +61,14 @@
       <p>Mi a bajban Ön mellett állunk!</p>
       <img class="right" src="../assets/images/corner-right.png" alt="sarok" />
     </section>
-
     <!-- about us section -->
 
     <section class="about-us">
       Méltósággal és diszkréten bánunk az elhunyt személlyel, mert úgy
       gondoljuk, hogy a végtisztesség minden embernek veleszületett joga.
     </section>
+
+    <!-- <div class="spacer"></div> -->
 
     <!-- services -->
 
@@ -78,10 +82,14 @@
         <li>Koszorúk, koporsódíszek élővirágból</li>
         <li>Padmaly lap betonból</li>
         <li>Sírásás és hantolás</li>
-        <li>Sírkeretek összerakésa</li>
+        <li>Sírkeretek összerakása</li>
         <li>Temetkezési segély intézése Ön helyett</li>
       </ul>
+      <div class="pidgeon"></div>
+      <div class="pidgeon mirror"></div>
     </section>
+
+    <div class="spacer"></div>
 
     <!-- coffin -->
     <section class="coffin" id="coffin">
@@ -99,14 +107,86 @@
             <i class="fa-solid fa-angle-right"></i>
           </div>
         </div>
+        <!-- text about the coffins -->
         <div class="pricing">
           <div class="header-text">Koporsók</div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            accusamus reiciendis sequi magni ab numquam nesciunt, ex
-            perspiciatis aliquam tempore modi voluptates. Earum reiciendis et
-            quas distinctio quo fugit alias.
-          </p>
+          <ul>
+            <li>
+              A széles választékú koposóink kozött talál:
+              <ul>
+                <li>Fenyőfából</li>
+                <li>Bükkfából</li>
+                <li>Nyárfából</li>
+                <li>Cserefából</li>
+              </ul>
+              készült koporsókat.
+            </li>
+            <li>
+              A koporsók ára <span>1900RON</span> tól <span>3400RON</span> ig
+              terjed
+            </li>
+            <li>Lapozza végig a képtárunk itt talál néhány példát</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- gravestone -->
+    <section class="gravestone" id="gravestone">
+      <div class="img-slider-container">
+        <div class="img-slider">
+          <!-- prev -->
+          <div class="prev-button" id="prev-gravestone">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <!-- slides -->
+          <div class="slides" id="gravestone-slides"></div>
+          <!-- next -->
+          <div class="next-button" id="next-gravestone">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+        <!-- text about the coffins -->
+        <div class="pricing">
+          <div class="header-text">Sírkövek és sírlapok</div>
+          <ul>
+            <li>
+              Tőlünk jó minőségű sírköveket és sírélapokat is tud vásárolni
+            </li>
+            <li>A sírásást és a sírkeretek összerakását vállaljuk</li>
+            <li>Lapozza végig a képtárunk itt talál néhány példát</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <section class="wreath" id="wreath">
+      <div class="img-slider-container">
+        <div class="img-slider">
+          <!-- prev -->
+          <div class="prev-button" id="prev-wreath">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <!-- slides -->
+          <div class="slides" id="wreath-slides"></div>
+          <!-- next -->
+          <div class="next-button" id="next-wreath">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+        <!-- text about the coffins -->
+        <div class="pricing">
+          <div class="header-text">Koszorúk és koporsódíszek</div>
+          <ul>
+            <li>
+              Tőlünk jó minőségű koszorúkat és koporsódíszeket is tud vásárolni
+            </li>
+            <li>Lapozza végig a képtárunk itt talál néhány példát</li>
+          </ul>
         </div>
       </div>
     </section>

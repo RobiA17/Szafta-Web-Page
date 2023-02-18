@@ -1,14 +1,23 @@
 $(document).ready(function() {
     const hamburger = $(".checkbox");
     const mobileNav = $(".mobile-nav");
-    const coffins = $("#coffin-img-container");
     const coffinFolder = "../assets/images/coffins/";
-    const slides = $("#coffin-slides");
-    const nextPageButton = $("#next");
-    const prevPageButton = $("#prev");
+    const gravestoneFolder = "../assets/images/gravestones/";
+    const wreathFolder = "../assets/images/wreaths/";
+    const coffinSlides = $("#coffin-slides");
+    const gravestoneSlides = $("#gravestone-slides");
+    const wreathSlides = $("#wreath-slides");
+    const nextPageButtonCoffin = $("#next");
+    const prevPageButtonCoffin = $("#prev");
+    const nextPageButtonGravestone = $("#next-gravestone");
+    const prevPageButtonGravestone = $("#prev-gravestone");
+    const nextPageButtonWreath = $("#next-wreath");
+    const prevPageButtonWreath = $("#prev-wreath");
     const fileextension = ".jpg";
     const mobileNavItems = $(".mobile-nav-items");
-    let coffinNumber;
+    let coffinCounter = 1;
+    let gravestoneCounter = 1;
+    let wreathCounter = 1;
 
     function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
@@ -23,33 +32,67 @@ $(document).ready(function() {
         mobileNav.toggleClass("open");
     });
 
-    let counter = 1;
     $.ajax({
         url: coffinFolder,
         success: function(data) {
             $(data).find("a:contains(" + fileextension + ")").each(function() {
                 var filename = this.href.replace(window.location.host, "").replace("http://", "");
-                if (counter == 1) {
-                    slides.append(`<img 
-                src="..${filename}" data-index=${counter++} data-active="true"/>`);
+                if (coffinCounter == 1) {
+                    coffinSlides.append(`<img 
+                src="..${filename}" data-index=${coffinCounter++} data-active="true"/>`);
                 } else {
-                    slides.append(`<img 
-                src="..${filename}" data-index="${counter++}"/>`);
+                    coffinSlides.append(`<img 
+                src="..${filename}" data-index="${coffinCounter++}"/>`);
                 }
 
             });
         }
     });
 
-    function nextPage() {
-        const currentPage = slides.find("[data-active=true]");
+    $.ajax({
+        url: gravestoneFolder,
+        success: function(data) {
+            $(data).find("a:contains(" + fileextension + ")").each(function() {
+                var filename = this.href.replace(window.location.host, "").replace("http://", "");
+                if (gravestoneCounter == 1) {
+                    gravestoneSlides.append(`<img 
+                src="..${filename}" data-index=${gravestoneCounter++} data-active="true"/>`);
+                } else {
+                    gravestoneSlides.append(`<img 
+                src="..${filename}" data-index="${gravestoneCounter++}"/>`);
+                }
+
+            });
+        }
+    });
+
+    $.ajax({
+        url: wreathFolder,
+        success: function(data) {
+            $(data).find("a:contains(" + fileextension + ")").each(function() {
+                var filename = this.href.replace(window.location.host, "").replace("http://", "");
+                if (wreathCounter == 1) {
+                    wreathSlides.append(`<img 
+                src="..${filename}" data-index=${wreathCounter++} data-active="true"/>`);
+                } else {
+                    wreathSlides.append(`<img 
+                src="..${filename}" data-index="${wreathCounter++}"/>`);
+                }
+
+            });
+        }
+    });
+
+    function nextPage(slides, counter) {
+        const slide = $(slides);
+        const currentPage = slide.find("[data-active=true]");
         const currentIndex = currentPage.attr("data-index");
         let nextPage;
         if (currentIndex != counter - 1) {
             nextPage = currentPage.next();
 
         } else {
-            nextPage = slides.find("[data-index=1]");
+            nextPage = slide.find("[data-index=1]");
 
         }
 
@@ -57,8 +100,9 @@ $(document).ready(function() {
         currentPage.attr("data-active", "false");
     }
 
-    function prevPage() {
-        const currentPage = slides.find("[data-active=true]");
+    function prevPage(slides, counter) {
+        const slide = $(slides);
+        const currentPage = slide.find("[data-active=true]");
         const currentIndex = currentPage.attr("data-index");
         let prevPage;
 
@@ -66,7 +110,7 @@ $(document).ready(function() {
             prevPage = currentPage.prev();
 
         } else {
-            prevPage = slides.find(`[data-index=` + coffinNumber + "]");
+            prevPage = slide.find(`[data-index=` + (counter - 1) + "]");
 
         }
 
@@ -75,6 +119,26 @@ $(document).ready(function() {
 
     }
 
-    nextPageButton.click(nextPage);
-    prevPageButton.click(prevPage);
+    nextPageButtonCoffin.click(function() {
+        nextPage("#coffin-slides", coffinCounter);
+    });
+    prevPageButtonCoffin.click(function() {
+        prevPage("#coffin-slides", coffinCounter);
+    });
+
+    nextPageButtonGravestone.click(function() {
+        nextPage("#gravestone-slides", gravestoneCounter);
+    });
+    prevPageButtonGravestone.click(function() {
+        prevPage("#gravestone-slides", gravestoneCounter);
+    });
+
+    nextPageButtonWreath.click(function() {
+        nextPage("#wreath-slides", wreathCounter);
+    });
+    prevPageButtonWreath.click(function() {
+        prevPage("#wreath-slides", wreathCounter);
+    });
+
+
 });
