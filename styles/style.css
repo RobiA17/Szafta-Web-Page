@@ -11,6 +11,7 @@
 :root {
     --clr-primary: #000;
     --bg-secondary: #fff;
+    --bg-footer: rgb(247, 246, 249);
     --bg-btn-nav: rgb(166, 107, 54);
     --bg-btn-nav-hover: rgb(142, 84, 33);
     --bg-mobile-nav: rgb(35 35 35 / 98%);
@@ -341,6 +342,10 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     position: relative;
 }
 
+.wreath {
+    padding-bottom: var(--p-between-sections);
+}
+
 .pricing {
     text-align: start;
     font-size: var(--fs-services-li);
@@ -521,6 +526,96 @@ li>ul li:not(:last-child) {
     animation-name: appear-side-right;
 }
 
+.black-stripe {
+    position: absolute;
+    background-image: url("../assets/images/black-stripe.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    top: -10px;
+    left: -10px;
+    height: 7em;
+    width: 7em;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+.before-footer {
+    margin-bottom: 20em;
+}
+
+.footer {
+    margin-top: 15em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5em;
+    align-items: center;
+    width: 100%;
+    height: 20em;
+    background-color: var(--bg-footer);
+}
+
+.footer-element {
+    width: 30em;
+    height: 35em;
+    background-color: var(--bg-secondary);
+    margin-bottom: 20em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+    -webkit-box-shadow: 0px -5px 20px 5px rgb(0 0 0 / 11%);
+    -moz-box-shadow: 0px -5px 20px 5px rgb(0 0 0 / 11%);
+    box-shadow: 0px -5px 20px 5px rgb(0 0 0 / 11%);
+    gap: 2em;
+}
+
+.footer-element .illustration img {
+    width: 10em;
+    height: 10em;
+    padding-top: 5em;
+}
+
+.footer-element .separator {
+    width: 80%;
+    background-color: var(--bg-footer);
+    height: 3px;
+    border-radius: 10px;
+}
+
+.footer-element .location-name {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.footer-element .contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer-element .contact-info {
+    font-size: 1.5em;
+}
+
+.footer-element .go-to-location-button {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+}
+
 
 /* RESPONSIVENESS */
 
@@ -609,6 +704,23 @@ li>ul li:not(:last-child) {
 @media only screen and (max-width: 725px) {
      :root {
         --pidgeon-height-width: 5rem;
+    }
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        height: auto;
+        margin-top: var(--p-between-sections);
+    }
+    .first {
+        margin-bottom: 0px;
+    }
+    .second {
+        margin-bottom: 0px;
+    }
+    .before-footer {
+        margin-bottom: initial;
     }
 }
 

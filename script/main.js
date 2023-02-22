@@ -35,8 +35,9 @@ $(document).ready(function() {
     $.ajax({
         url: coffinFolder,
         success: function(data) {
+            console.log(data);
             $(data).find("a:contains(" + fileextension + ")").each(function() {
-                var filename = this.href.replace(window.location.host, "").replace("http://", "");
+                var filename = this.href.replace(window.location.host, "").replace("http://", "").replace("https://", "");
                 if (coffinCounter == 1) {
                     coffinSlides.append(`<img 
                 src="..${filename}" data-index=${coffinCounter++} data-active="true"/>`);
