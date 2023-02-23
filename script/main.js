@@ -32,64 +32,16 @@ $(document).ready(function() {
         mobileNav.toggleClass("open");
     });
 
-    $.ajax({
-        url: coffinFolder,
-        success: function(data) {
-            console.log(data);
-            $(data).find("a:contains(" + fileextension + ")").each(function() {
-                var filename = this.href.replace(window.location.host, "").replace("http://", "").replace("https://", "");
-                if (coffinCounter == 1) {
-                    coffinSlides.append(`<img 
-                src="..${filename}" data-index=${coffinCounter++} data-active="true"/>`);
-                } else {
-                    coffinSlides.append(`<img 
-                src="..${filename}" data-index="${coffinCounter++}"/>`);
-                }
-
-            });
-        }
-    });
-
-    $.ajax({
-        url: gravestoneFolder,
-        success: function(data) {
-            $(data).find("a:contains(" + fileextension + ")").each(function() {
-                var filename = this.href.replace(window.location.host, "").replace("http://", "");
-                if (gravestoneCounter == 1) {
-                    gravestoneSlides.append(`<img 
-                src="..${filename}" data-index=${gravestoneCounter++} data-active="true"/>`);
-                } else {
-                    gravestoneSlides.append(`<img 
-                src="..${filename}" data-index="${gravestoneCounter++}"/>`);
-                }
-
-            });
-        }
-    });
-
-    $.ajax({
-        url: wreathFolder,
-        success: function(data) {
-            $(data).find("a:contains(" + fileextension + ")").each(function() {
-                var filename = this.href.replace(window.location.host, "").replace("http://", "");
-                if (wreathCounter == 1) {
-                    wreathSlides.append(`<img 
-                src="..${filename}" data-index=${wreathCounter++} data-active="true"/>`);
-                } else {
-                    wreathSlides.append(`<img 
-                src="..${filename}" data-index="${wreathCounter++}"/>`);
-                }
-
-            });
-        }
-    });
+    coffinCounter = coffinSlides.children().length;
+    gravestoneCounter = gravestoneSlides.children().length;
+    wreathCounter = wreathSlides.children().length;
 
     function nextPage(slides, counter) {
         const slide = $(slides);
         const currentPage = slide.find("[data-active=true]");
         const currentIndex = currentPage.attr("data-index");
         let nextPage;
-        if (currentIndex != counter - 1) {
+        if (currentIndex != counter) {
             nextPage = currentPage.next();
 
         } else {
@@ -111,7 +63,7 @@ $(document).ready(function() {
             prevPage = currentPage.prev();
 
         } else {
-            prevPage = slide.find(`[data-index=` + (counter - 1) + "]");
+            prevPage = slide.find(`[data-index=` + counter + "]");
 
         }
 
