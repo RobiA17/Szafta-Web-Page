@@ -588,6 +588,10 @@ li>ul li:not(:last-child) {
     gap: 2em;
 }
 
+.footer-element .first {
+    text-align: center;
+}
+
 .footer-element .illustration img {
     width: 10em;
     height: 10em;

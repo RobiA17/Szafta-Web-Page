@@ -21,7 +21,7 @@ $(document).ready(function() {
     var i18n = $.i18n();
 
     i18n.load({
-        'hu': `./script/i18n/hu.json`
+        'hu': `./script/i18n/ro.json`
     }).done(function() {
         $('body').i18n();
         $('head').i18n();
