@@ -608,7 +608,7 @@ li>ul li:not(:last-child) {
 .footer-element .location-name {
     font-weight: bold;
     font-size: 1.5em;
-    text-align: left;
+    text-align: center;
 }
 
 .footer-element .contact-info {
