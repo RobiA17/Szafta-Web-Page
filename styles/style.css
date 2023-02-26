@@ -33,6 +33,8 @@
     --img-coffin-hight: 45em;
     --img-coffin-width: 400px;
     --pidgeon-height-width: 10rem;
+    --stripe-size: 7em;
+    --fs-section-header: 3rem;
 }
 
 
@@ -57,6 +59,10 @@
     justify-content: space-between;
     align-items: center;
     position: sticky;
+}
+
+#contact .navbar {
+    justify-content: center;
 }
 
 .navbar li:not(:last-child) {
@@ -296,7 +302,10 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     position: relative;
 }
 
-.services .header-text {
+.services .header-text,
+#wreath .header-text,
+#gravestone .header-text,
+#coffin .header-text {
     font-size: var(--fs-services-header);
 }
 
@@ -534,8 +543,8 @@ li>ul li:not(:last-child) {
     background-size: contain;
     top: -10px;
     left: -10px;
-    height: 7em;
-    width: 7em;
+    height: var(--stripe-size);
+    width: var(--stripe-size);
 }
 
 .btn {
@@ -746,6 +755,7 @@ li>ul li:not(:last-child) {
 @media only screen and (max-width: 570px) {
      :root {
         --fs-logo: 2em;
+        --stripe-size: 5em;
     }
 }
 
