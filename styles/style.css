@@ -630,6 +630,42 @@ li>ul li:not(:last-child) {
 }
 
 
+/* CONTACT US PAGE*/
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-footer .header-text {
+    padding-top: 2em;
+    margin-bottom: 2em;
+}
+
+.main-contact-section {
+    text-align: center;
+    font-size: 2em;
+    opacity: 0;
+    animation: appear 1s forwards;
+    animation-delay: .5s;
+}
+
+.main-contact-section i {
+    padding: 1em 1em 0em 1em;
+}
+
+
 /* RESPONSIVENESS */
 
 @media only screen and (max-width: 1535px) {
@@ -746,7 +782,7 @@ li>ul li:not(:last-child) {
 @media only screen and (max-width: 625px) {
      :root {
         --fs-slogan: 1.3rem !important;
-        --fs-about-us: 1rem;
+        --fs-about-us: .9rem;
         --slogan-img-height: 3.5rem !important;
         --fs-services-header: 2rem;
         --fs-services-li: 1rem;
@@ -839,6 +875,10 @@ li>ul li:not(:last-child) {
 
 
 /* CSS HARD RESET */
+
+mark {
+    background-color: transparent;
+}
 
 html,
 body,

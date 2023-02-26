@@ -1,648 +1,499 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="hu" dir="ltr">
+
+<head>
     <!-- TODO: add more meta tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.fallbacks.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.language.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.messagestore.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.parser.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.emitter.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.emitter.bidi.js"></script>
     <script src="script/main.js"></script>
-    <title>Szafta Temetkezés</title>
-  </head>
+    <title data-i18n="app-title"></title>
+</head>
 
-  <body>
+<body>
     <nav class="header">
-      <div class="black-stripe"></div>
-      <div class="navbar">
-        <!-- logo -->
-        <div class="logo">
-          <a href="./index.html">Szafta Temetkezés</a>
-        </div>
+        <div class="black-stripe"></div>
+        <div class="navbar">
+            <!-- logo -->
+            <div class="logo">
+                <a href="./index.html" data-i18n="app-title"></a>
+            </div>
 
-        <input class="checkbox" type="checkbox" name="" id="" />
-        <div class="hamburger-lines">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-          <span class="line line3"></span>
-        </div>
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
 
-        <!-- navigation items -->
-        <div class="nav-items">
-          <ul>
-            <li><a href="#services">Ajánlataink</a></li>
-            <li><a href="#coffin">Koporsók</a></li>
-            <li><a href="#gravestone">Sírkövek</a></li>
-            <li><a href="#wreath">Koszorúk</a></li>
-            <a href="/views/contact.html">
-              <li class="btn unselectable">Vegye fel velünk a kapcsolatot!</li>
-            </a>
-          </ul>
+            <!-- navigation items -->
+            <div class="nav-items">
+                <ul>
+                    <li>
+                        <a href="#services" data-i18n="services-title"></a>
+                    </li>
+                    <li>
+                        <a href="#coffin" data-i18n="coffin-title"></a>
+                    </li>
+                    <li>
+                        <a href="#gravestone" data-i18n="gravestone-title"></a>
+                    </li>
+                    <li>
+                        <a href="#wreath" data-i18n="wreath-title"></a>
+                    </li>
+                    <a href="./contact.html">
+                        <li class="btn unselectable" data-i18n="get-in-contact"></li>
+                    </a>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
     <!-- mobile navigation -->
     <div class="mobile-nav">
-      <div class="mobile-nav-items">
-        <ul>
-          <li><a href="#services">Ajánlataink</a></li>
-          <li><a href="#coffin">Koporsók</a></li>
-          <li><a href="#gravestone">Sírkövek</a></li>
-          <li><a href="#wreath">Koszorúk</a></li>
-          <li class="btn unselectable">
-            <a href="/views/contact.html">Vegye fel velünk a kapcsolatot!</a>
-          </li>
-        </ul>
-      </div>
+        <div class="mobile-nav-items">
+            <ul>
+                <li>
+                    <a href="#services" data-i18n="services-title"></a>
+                </li>
+                <li>
+                    <a href="#coffin" data-i18n="coffin-title"></a>
+                </li>
+                <li>
+                    <a href="#gravestone" data-i18n="gravestone-title"></a>
+                </li>
+                <li>
+                    <a href="#wreath" data-i18n="wreath-title"></a>
+                </li>
+                <a href="./contact.html">
+                    <li class="btn unselectable" data-i18n="get-in-contact"></li>
+                </a>
+            </ul>
+        </div>
     </div>
 
     <!-- slogan section -->
     <section class="slogan unselectable">
-      <img class="left" src="../assets/images/corner-left.png" alt="sarok" />
-      <p>Mi a bajban Ön mellett állunk!</p>
-      <img class="right" src="../assets/images/corner-right.png" alt="sarok" />
+        <img class="left" src="../assets/images/corner-left.png" alt="sarok" />
+        <p data-i18n="slogan"></p>
+        <img class="right" src="../assets/images/corner-right.png" alt="sarok" />
     </section>
     <!-- about us section -->
 
-    <section class="about-us">
-      Méltósággal és diszkréten bánunk az elhunyt személlyel, mert úgy
-      gondoljuk, hogy a végtisztesség minden embernek veleszületett joga.
-    </section>
+    <section class="about-us" data-i18n="about-us"></section>
 
     <!-- <div class="spacer"></div> -->
 
     <!-- services -->
 
     <section class="services" id="services">
-      <div class="header-text">Ajánlataink</div>
+        <div class="header-text" data-i18n="services-title"></div>
 
-      <ul>
-        <li>Koporsók széles választékon</li>
-        <li>Gyászjelentés elkészítése</li>
-        <li>Elhunyt elszállítása</li>
-        <li>Koszorúk, koporsódíszek élővirágból</li>
-        <li>Padmaly lap betonból</li>
-        <li>Sírásás és hantolás</li>
-        <li>Sírkeretek összerakása</li>
-        <li>Temetkezési segély intézése Ön helyett</li>
-      </ul>
-      <div class="pidgeon"></div>
-      <div class="pidgeon mirror"></div>
+        <ul>
+            <li data-i18n="service-1"></li>
+            <li data-i18n="service-2"></li>
+            <li data-i18n="service-3"></li>
+            <li data-i18n="service-4"></li>
+            <li data-i18n="service-5"></li>
+            <li data-i18n="service-6"></li>
+            <li data-i18n="service-7"></li>
+            <li data-i18n="service-8"></li>
+        </ul>
+        <div class="pidgeon"></div>
+        <div class="pidgeon mirror"></div>
     </section>
 
     <div class="spacer"></div>
 
     <!-- coffin -->
     <section class="coffin" id="coffin">
-      <!-- slider -->
-      <div class="img-slider-container">
-        <div class="img-slider">
-          <!-- prev -->
-          <div class="prev-button" id="prev">
-            <i class="fa-solid fa-angle-left"></i>
-          </div>
-          <!-- slides -->
-          <div class="slides" id="coffin-slides">
-            <div
-              style="
+        <!-- slider -->
+        <div class="img-slider-container">
+            <div class="img-slider">
+                <!-- prev -->
+                <div class="prev-button" id="prev">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <!-- slides -->
+                <div class="slides" id="coffin-slides">
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin1.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="true"
-              data-index="1"
-            ></div>
-            <div
-              style="
+              " data-active="true" data-index="1"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin2.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="2"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="2"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin3.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="3"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="3"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin4.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="4"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="4"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin5.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="5"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="5"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin6.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="6"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="6"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin7.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="7"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="7"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin8.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="8"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="8"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin9.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="9"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="9"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin10.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="10"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="10"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin11.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="11"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="11"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin12.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="12"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="12"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin13.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="13"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="13"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin14.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="14"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="14"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin15.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="15"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="15"></div>
+                    <div style="
                 background-image: url('../assets/images/coffins/coffin16.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="16"
-            ></div>
-          </div>
-          <!-- next -->
-          <div class="next-button" id="next">
-            <i class="fa-solid fa-angle-right"></i>
-          </div>
+              " data-active="false" data-index="16"></div>
+                </div>
+                <!-- next -->
+                <div class="next-button" id="next">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <!-- text about the coffins -->
+            <div class="pricing">
+                <div class="header-text" data-i18n="coffin-title"></div>
+                <ul>
+                    <li>
+                        <span data-i18n="coffin-text-1"></span>
+                        <ul>
+                            <li data-i18n="coffin-material-1"></li>
+                            <li data-i18n="coffin-material-2"></li>
+                            <li data-i18n="coffin-material-3"></li>
+                            <li data-i18n="coffin-material-4"></li>
+                        </ul>
+                        <span data-i18n="coffin-text-2"></span>
+                    </li>
+                    <li>
+                        <mark data-i18n="coffin-text-3-1"></mark>
+                        <span data-i18n="coffin-price-1"></span>
+                        <mark data-i18n="coffin-text-3-2"></mark>
+                        <span data-i18n="coffin-price-2"></span> ig terjed
+                    </li>
+                    <li data-i18n="last-text"></li>
+                </ul>
+            </div>
         </div>
-        <!-- text about the coffins -->
-        <div class="pricing">
-          <div class="header-text">Koporsók</div>
-          <ul>
-            <li>
-              A széles választékú koposóink kozött talál:
-              <ul>
-                <li>Fenyőfából</li>
-                <li>Bükkfából</li>
-                <li>Nyárfából</li>
-                <li>Cserefából</li>
-              </ul>
-              készült koporsókat.
-            </li>
-            <li>
-              A koporsók ára <span>1900RON</span> tól <span>3400RON</span> ig
-              terjed
-            </li>
-            <li>Lapozza végig a képtárunk itt talál néhány példát</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <div class="spacer"></div>
 
     <!-- gravestone -->
     <section class="gravestone" id="gravestone">
-      <div class="img-slider-container">
-        <div class="img-slider">
-          <!-- prev -->
-          <div class="prev-button" id="prev-gravestone">
-            <i class="fa-solid fa-angle-left"></i>
-          </div>
-          <!-- slides -->
-          <div class="slides" id="gravestone-slides">
-            <div
-              style="
+        <div class="img-slider-container">
+            <div class="img-slider">
+                <!-- prev -->
+                <div class="prev-button" id="prev-gravestone">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <!-- slides -->
+                <div class="slides" id="gravestone-slides">
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone1.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="true"
-              data-index="1"
-            ></div>
-            <div
-              style="
+              " data-active="true" data-index="1"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone2.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="2"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="2"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone3.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="3"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="3"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone4.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="4"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="4"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone5.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="5"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="5"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone6.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="6"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="6"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone7.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="7"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="7"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone8.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="8"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="8"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone9.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="9"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="9"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone10.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="10"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="10"></div>
+                    <div style="
                 background-image: url('../assets/images/gravestones/gravestone11.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="11"
-            ></div>
-          </div>
-          <!-- next -->
-          <div class="next-button" id="next-gravestone">
-            <i class="fa-solid fa-angle-right"></i>
-          </div>
+              " data-active="false" data-index="11"></div>
+                </div>
+                <!-- next -->
+                <div class="next-button" id="next-gravestone">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <!-- text about the images -->
+            <div class="pricing">
+                <div class="header-text" data-i18n="gravestone-title-2"></div>
+                <ul>
+                    <li data-i18n="gravestone-text-1"></li>
+                    <li data-i18n="gravestone-text-1"></li>
+                    <li data-i18n="last-text"></li>
+                </ul>
+            </div>
         </div>
-        <!-- text about the images -->
-        <div class="pricing">
-          <div class="header-text">Sírkövek és sírlapok</div>
-          <ul>
-            <li>
-              Tőlünk jó minőségű sírköveket és sírlapokat is tud vásárolni
-            </li>
-            <li>A sírásást és a sírkeretek összerakását vállaljuk</li>
-            <li>Lapozza végig a képtárunk itt talál néhány példát</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <div class="spacer"></div>
 
     <!-- wreath slider -->
     <section class="wreath" id="wreath">
-      <div class="img-slider-container">
-        <div class="img-slider">
-          <!-- prev -->
-          <div class="prev-button" id="prev-wreath">
-            <i class="fa-solid fa-angle-left"></i>
-          </div>
-          <!-- slides -->
-          <div class="slides" id="wreath-slides">
-            <div
-              style="
+        <div class="img-slider-container">
+            <div class="img-slider">
+                <!-- prev -->
+                <div class="prev-button" id="prev-wreath">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <!-- slides -->
+                <div class="slides" id="wreath-slides">
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath1.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="true"
-              data-index="1"
-            ></div>
-            <div
-              style="
+              " data-active="true" data-index="1"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath2.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="2"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="2"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath3.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="3"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="3"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath4.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="4"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="4"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath5.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="5"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="5"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath6.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="6"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="6"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath7.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="7"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="7"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath8.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="8"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="8"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath9.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="9"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="9"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath10.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="10"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="10"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath11.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="11"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="11"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath12.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="12"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="12"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath13.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="13"
-            ></div>
-            <div
-              style="
+              " data-active="false" data-index="13"></div>
+                    <div style="
                 background-image: url('../assets/images/wreaths/wreath14.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-              "
-              data-active="false"
-              data-index="14"
-            ></div>
-          </div>
-          <!-- next -->
-          <div class="next-button" id="next-wreath">
-            <i class="fa-solid fa-angle-right"></i>
-          </div>
+              " data-active="false" data-index="14"></div>
+                </div>
+                <!-- next -->
+                <div class="next-button" id="next-wreath">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <!-- text about the images -->
+            <div class="pricing">
+                <div class="header-text" data-i18n="wreath-title-2"></div>
+                <ul>
+                    <li data-i18n="wreath-text-1"></li>
+                    <li data-i18n="last-text"></li>
+                </ul>
+            </div>
         </div>
-        <!-- text about the images -->
-        <div class="pricing">
-          <div class="header-text">Koszorúk és koporsódíszek</div>
-          <ul>
-            <li>
-              Tőlünk jó minőségű koszorúkat és koporsódíszeket is tud vásárolni
-            </li>
-            <li>Lapozza végig a képtárunk itt talál néhány példát</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <div class="spacer before-footer"></div>
 
     <!-- footer -->
     <section class="footer">
-      <div class="footer-element first">
-        <div class="illustration">
-          <img src="../assets/images/coffin.png" alt="" />
+        <div class="footer-element first">
+            <div class="illustration">
+                <img src="../assets/images/coffin.png" alt="" />
+            </div>
+            <div class="location-name" data-i18n="saint-george"></div>
+            <div class="separator"></div>
+            <div class="contact-info">
+                <i class="fa-solid fa-phone"></i> 0756030069
+            </div>
+            <div class="go-to-location-button btn">
+                <a href="https://www.google.com/maps/dir//Strada+Vasile+Goldi%C8%99+10,+Sf%C3%A2ntu+Gheorghe+520001/@45.860229,25.7777579,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x40b4a492d4be6f07:0x918da1078944f52f!2m2!1d25.7799519!2d45.8602253!3e0" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span data-i18n="see-on-map"></span>
+                </a>
+            </div>
         </div>
-        <div class="location-name">Sepsiszentgyörgyi üzletünk</div>
-        <div class="separator"></div>
-        <div class="contact-info">
-          <i class="fa-solid fa-phone"></i> 0756030069
-        </div>
-        <div class="go-to-location-button btn">
-          <a
-            href="https://www.google.com/maps/dir//Strada+Vasile+Goldi%C8%99+10,+Sf%C3%A2ntu+Gheorghe+520001/@45.860229,25.7777579,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x40b4a492d4be6f07:0x918da1078944f52f!2m2!1d25.7799519!2d45.8602253!3e0"
-            target="_blank"
-          >
-            <i class="fa-solid fa-location-dot"></i>Lásd a térképen
-          </a>
-        </div>
-      </div>
-      <div class="footer-element second">
-        <div class="illustration">
-          <img src="../assets/images/grave.png" alt="" />
-        </div>
-        <div class="location-name">Uzoni üzletünk</div>
-        <div class="separator"></div>
-        <div class="contact-info">
-          <i class="fa-solid fa-phone"></i> 0756030069
-        </div>
-        <div class="go-to-location-button btn">
-          <i class="fa-solid fa-location-dot"></i>Lásd a térképen
+        <div class="footer-element second">
+            <div class="illustration">
+                <img src="../assets/images/grave.png" alt="" />
+            </div>
+            <div class="location-name" data-i18n="uzon"></div>
+            <div class="separator"></div>
+            <div class="contact-info">
+                <i class="fa-solid fa-phone"></i> 0756030069
+            </div>
+            <div class="go-to-location-button btn">
+                <i class="fa-solid fa-location-dot"></i
+          ><span data-i18n="see-on-map"></span>
         </div>
       </div>
     </section>

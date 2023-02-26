@@ -13,11 +13,20 @@ $(document).ready(function() {
     const prevPageButtonGravestone = $("#prev-gravestone");
     const nextPageButtonWreath = $("#next-wreath");
     const prevPageButtonWreath = $("#prev-wreath");
-    const fileextension = ".jpg";
     const mobileNavItems = $(".mobile-nav-items");
     let coffinCounter = 1;
     let gravestoneCounter = 1;
     let wreathCounter = 1;
+
+    var i18n = $.i18n();
+
+    i18n.load({
+        'hu': `./script/i18n/hu.json`
+    }).done(function() {
+        $('body').i18n();
+        $('head').i18n();
+    });
+
 
     function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
@@ -92,6 +101,5 @@ $(document).ready(function() {
     prevPageButtonWreath.click(function() {
         prevPage("#wreath-slides", wreathCounter);
     });
-
 
 });

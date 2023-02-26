@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <!-- TODO: add more meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.fallbacks.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.language.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.messagestore.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.parser.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.emitter.js"></script>
+    <script src="./jquery.i18n/src/jquery.i18n.emitter.bidi.js"></script>
+    <script src="script/main.js"></script>
+    <title data-i18n="app-title"></title>
+</head>
+
+<body>
+    <nav class="header">
+        <div class="black-stripe"></div>
+        <div class="navbar">
+            <!-- logo -->
+            <div class="logo">
+                <a href="index.html" data-i18n="app-title"></a>
+            </div>
+        </div>
+    </nav>
+    <section class="slogan unselectable">
+        <img class="left" src="../assets/images/corner-left.png" alt="sarok" />
+        <p data-i18n="slogan"></p>
+        <img class="right" src="../assets/images/corner-right.png" alt="sarok" />
+    </section>
+    <section class="contact-us">
+        <div class="main-contact-section">
+            <span data-i18n="up-24-0"></span>
+            <br />
+            <span data-i18n="search-on-facebook"></span>
+            <a href="https://www.facebook.com/profile.php?id=100079201420516"><i class="fa-brands fa-facebook"></i
+        ></a>
+        </div>
+    </section>
+    <div class="spacer"></div>
+    <section class="contact-footer">
+        <div class="header-text" data-i18n="stores-title"></div>
+        <section class="footer">
+            <div class="footer-element first">
+                <div class="illustration">
+                    <img src="../assets/images/coffin.png" alt="" />
+                </div>
+                <div class="location-name" data-i18n="saint-george"></div>
+                <div class="separator"></div>
+                <div class="contact-info">
+                    <i class="fa-solid fa-phone"></i> 0756030069
+                </div>
+                <div class="go-to-location-button btn">
+                    <a href="https://www.google.com/maps/dir//Strada+Vasile+Goldi%C8%99+10,+Sf%C3%A2ntu+Gheorghe+520001/@45.860229,25.7777579,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x40b4a492d4be6f07:0x918da1078944f52f!2m2!1d25.7799519!2d45.8602253!3e0" target="_blank">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span data-i18n="see-on-map"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-element second">
+                <div class="illustration">
+                    <img src="../assets/images/grave.png" alt="" />
+                </div>
+                <div class="location-name" data-i18n="uzon"></div>
+                <div class="separator"></div>
+                <div class="contact-info">
+                    <i class="fa-solid fa-phone"></i> 0756030069
+                </div>
+                <div class="go-to-location-button btn">
+                    <i class="fa-solid fa-location-dot"></i
+            ><span data-i18n="see-on-map"></span>
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
