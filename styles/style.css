@@ -35,6 +35,7 @@
     --pidgeon-height-width: 10rem;
     --stripe-size: 7em;
     --fs-section-header: 3rem;
+    --footer-element-width: 20em;
 }
 
 
@@ -571,7 +572,7 @@ li>ul li:not(:last-child) {
 }
 
 .footer-element {
-    width: 30em;
+    width: var(--footer-element-width);
     height: 35em;
     background-color: var(--bg-secondary);
     margin-bottom: 20em;
@@ -622,7 +623,10 @@ li>ul li:not(:last-child) {
     margin-bottom: 5em;
     display: flex;
     flex-direction: row;
-    gap: .5em;
+}
+
+.go-to-location-button i {
+    padding-right: 0.5em;
 }
 
 
@@ -932,7 +936,8 @@ a {
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    /* contain: paint; */
 }
 
 body {
