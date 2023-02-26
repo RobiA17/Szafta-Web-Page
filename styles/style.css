@@ -20,8 +20,8 @@
     --fs-slogan: 3.5rem;
     --clr-secondary: #fff;
     --fs-nav-items: 1em;
-    --p-nav-items: 3rem;
-    --p-navbar: 1.8em 10em 1.8em 10em;
+    --p-nav-items: 2rem;
+    --p-navbar: 1.8em 3em 1.8em 3em;
     --p-about-us: 0em 10em 0em 10em;
     --p-btn-navbar: 5rem;
     --slogan-img-height: 8.5rem;
@@ -670,18 +670,53 @@ li>ul li:not(:last-child) {
 }
 
 
+/* LANGUAGE CHAGNE */
+
+.language {
+    position: relative;
+    cursor: pointer;
+}
+
+.hungarian {
+    background-image: url('/assets/images/flags/hungarian.png');
+}
+
+.romanian {
+    background-image: url('/assets/images/flags/romanian.png');
+}
+
+.hungarian,
+.romanian {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: none;
+}
+
+.appear {
+    display: block;
+}
+
+
 /* RESPONSIVENESS */
 
 @media only screen and (max-width: 1535px) {
      :root {
-        --p-navbar: 1.8em 10em 1.8em 10em;
+        --p-navbar: 1.8em 2.8em 1.8em 2.8em;
         --p-btn-navbar: 3rem;
     }
 }
 
 @media only screen and (max-width: 1375px) {
      :root {
-        --p-navbar: 1.8em 5em 1.8em 5em;
+        --p-navbar: 1.8em 2.3em 1.8em 2.3em;
         --fs-about-us: 1.5em;
         --p-about-us: 0em 8em 0em 8em;
     }
@@ -689,14 +724,14 @@ li>ul li:not(:last-child) {
 
 @media only screen and (max-width: 1205px) {
      :root {
-        --p-navbar: 1.8em 2em 1.8em 2em;
+        --p-navbar: 1.8em 1.5em 1.8em 1.5em;
         --p-btn-navbar: 0.5rem;
     }
 }
 
 @media only screen and (max-width: 1045px) {
      :root {
-        --p-navbar: 1.8em 1em 1.8em 1em;
+        --p-navbar: 1.5em 1em 1.5em 1em;
         --p-btn-navbar: 0rem;
     }
 }
