@@ -36,6 +36,8 @@
     --stripe-size: 7em;
     --fs-section-header: 3rem;
     --footer-element-width: 20em;
+    --hamburger-height: 26px;
+    --hamburger-width: 32px;
 }
 
 
@@ -177,8 +179,8 @@
 
 .hamburger-lines {
     display: block;
-    height: 26px;
-    width: 32px;
+    height: var(--hamburger-height);
+    width: var(--hamburger-width);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -868,21 +870,30 @@ li>ul li:not(:last-child) {
     [data-i18n="stores-title"] {
         font-size: 2rem;
     }
+    .black-stripe {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 570px) {
+    .pidgeon {
+        display: none;
+    }
     .mobile-nav {
         top: 4em;
     }
      :root {
         --fs-logo: 2em;
         --stripe-size: 5em;
+        --hamburger-width: 25px;
+        --hamburger-height: 20px;
     }
 }
 
 @media only screen and (max-width: 455px) {
      :root {
         --pidgeon-height-width: 3rem;
+        --fs-logo: 1.5em;
     }
 }
 
@@ -893,7 +904,7 @@ li>ul li:not(:last-child) {
      :root {
         --fs-slogan: 1rem !important;
         --slogan-img-height: 3rem !important;
-        --fs-logo: 1.5em;
+        --fs-logo: 1.2em;
         --footer-element-width: 15em;
     }
 }
@@ -907,6 +918,12 @@ li>ul li:not(:last-child) {
     }
      :root {
         --p-about-us: 0em 4em 0em 4em;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+     :root {
+        --fs-logo: 1em;
     }
 }
 
