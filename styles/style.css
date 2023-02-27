@@ -16,7 +16,7 @@
     --bg-btn-nav-hover: rgb(142, 84, 33);
     --bg-mobile-nav: rgb(35 35 35 / 98%);
     --ff-logo: LogoFont;
-    --fs-logo: 3em;
+    --fs-logo: 2.5em;
     --fs-slogan: 3.5rem;
     --clr-secondary: #fff;
     --fs-nav-items: 1em;
@@ -57,7 +57,7 @@
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     position: sticky;
 }
@@ -113,6 +113,7 @@
 
 .nav-items .btn {
     margin-left: var(--p-btn-navbar);
+    width: max-content;
 }
 
 .btn {
@@ -552,6 +553,14 @@ li>ul li:not(:last-child) {
     cursor: pointer;
 }
 
+.contact-header .mobile-view {
+    display: inherit !important;
+}
+
+.mobile-view {
+    display: none !important;
+}
+
 
 /* FOOTER */
 
@@ -659,7 +668,7 @@ li>ul li:not(:last-child) {
 
 .main-contact-section {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.8em;
     opacity: 0;
     animation: appear 1s forwards;
     animation-delay: .5s;
@@ -672,8 +681,13 @@ li>ul li:not(:last-child) {
 .contact-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    gap: 2em;
+    justify-content: center;
     align-items: center;
+}
+
+.contact-header .language {
+    padding-right: 10px;
 }
 
 
@@ -700,8 +714,8 @@ li>ul li:not(:last-child) {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 30px;
-    width: 30px;
+    height: 1.5rem;
+    width: 1.5rem;
     border-radius: 20px;
     display: none;
 }
@@ -763,11 +777,16 @@ li>ul li:not(:last-child) {
         --img-coffin-hight: 42em;
         --img-coffin-width: 350px;
     }
-    .nav-items {
+    .nav-items ul {
         display: none;
+    }
+    .mobile-view {
+        display: flex !important;
     }
     .navbar {
         justify-content: center !important;
+        align-items: center;
+        gap: 2em;
     }
     .checkbox {
         display: block;
@@ -843,6 +862,12 @@ li>ul li:not(:last-child) {
         --img-coffin-hight: 40em;
         --img-coffin-width: 300px;
     }
+    .main-contact-section {
+        font-size: 1em;
+    }
+    [data-i18n="stores-title"] {
+        font-size: 2rem;
+    }
 }
 
 @media only screen and (max-width: 570px) {
@@ -869,6 +894,7 @@ li>ul li:not(:last-child) {
         --fs-slogan: 1rem !important;
         --slogan-img-height: 3rem !important;
         --fs-logo: 1.5em;
+        --footer-element-width: 15em;
     }
 }
 
@@ -887,6 +913,12 @@ li>ul li:not(:last-child) {
 @media only screen and (max-width: 290px) {
      :root {
         --p-about-us: 0em 2em 0em 2em;
+    }
+}
+
+@media only screen and (max-width: 255px) {
+    [data-i18n="stores-title"] {
+        width: min-content;
     }
 }
 
