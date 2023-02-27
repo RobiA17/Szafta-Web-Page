@@ -708,7 +708,7 @@ li>ul li:not(:last-child) {
 
 .mobile-nav .hungarian,
 .mobile-nav .romanian {
-    margin-top: 20px;
+    margin-top: 80px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
