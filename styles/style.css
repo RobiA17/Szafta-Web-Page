@@ -113,8 +113,11 @@
     align-items: center;
 }
 
-.nav-items .btn {
+.nav-items ul>a {
     margin-left: var(--p-btn-navbar);
+}
+
+.nav-items .btn {
     width: max-content;
 }
 
@@ -252,7 +255,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
     transform: translateX(100%);
     position: fixed;
-    top: 5em;
+    top: 4.5em;
     left: 0;
     right: 0;
     z-index: 9999;
