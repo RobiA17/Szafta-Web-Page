@@ -1,0 +1,153 @@
+/* ROOT SETTINGS */
+
+:root {
+  --primary-color: #f9efdb;
+  --secondary-color: #ebd9b4;
+  --tertiary-color: #9dbc98;
+  --quaternary-color: #638889;
+  --horizontal-padding: 10em;
+  --fs-logo: 2rem;
+  --fs-menu-item: 1.2rem;
+  --fs-big-text: 3rem;
+  --fs-medium-text: 1.4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Playfair Display";
+  background-color: white;
+  color: var(--quaternary-color);
+}
+
+/* Upper Navigation */
+.upper-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5em var(--horizontal-padding) 1em var(--horizontal-padding);
+  height: fit-content;
+  border-bottom: 1.5px solid var(--secondary-color);
+}
+
+.upper-navigation .logo {
+  font-size: var(--fs-logo);
+  font-weight: bold;
+  flex-basis: 33.33%;
+}
+
+.upper-navigation .menu {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 66.66%;
+}
+
+.upper-navigation .menu li {
+  list-style: none;
+}
+
+.upper-navigation .menu li a {
+  text-decoration: none;
+  color: var(--tertiary-color);
+  font-size: var(--fs-menu-item);
+  font-weight: bold;
+}
+
+.upper-navigation .menu li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.upper-navigation .menu li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* BODY */
+
+#flower-shop-body {
+  height: fit-content;
+}
+
+/* FIRST SECTION */
+
+#first-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5em 10em;
+  height: 35em;
+  gap: 2em;
+}
+
+#first-section > div {
+  flex-basis: 33.33%;
+  height: 100%;
+}
+
+/* CENTER IMAGE */
+
+#first-section .center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#first-section .image-holder {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  background-image: url("../assets/images/flower-shop/flower-shop-center-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* LEFT TEXT */
+
+#first-section .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
+}
+
+.left .title {
+  text-transform: uppercase;
+  font-size: var(--fs-big-text);
+  color: var(--quaternary-color);
+  font-weight: 500;
+}
+
+.left .paragraph {
+  font-size: var(--fs-medium-text);
+  color: var(--quaternary-color);
+  font-weight: 300;
+}
+
+.left .button {
+  padding: 0.5em 1.5em;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  font-size: var(--fs-menu-item);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.25s ease-out;
+}
