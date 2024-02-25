@@ -1,15 +1,17 @@
 /* ROOT SETTINGS */
 
 :root {
-  --primary-color: #f9efdb;
-  --secondary-color: #ebd9b4;
+  --primary-color: #f6f1ed;
+  --secondary-color: #dbd7cb;
   --tertiary-color: #9dbc98;
-  --quaternary-color: #638889;
+  --clr-main-font: #638889;
   --horizontal-padding: 10em;
   --fs-logo: 2rem;
   --fs-menu-item: 1.2rem;
-  --fs-big-text: 3rem;
-  --fs-medium-text: 1.4rem;
+  --fs-big-text: 3.5rem;
+  --fs-medium-text: 1.8rem;
+  --height-first-section: 35em;
+  --height-second-section: 20em;
 }
 
 * {
@@ -19,8 +21,8 @@
 
 body {
   font-family: "Playfair Display";
-  background-color: white;
-  color: var(--quaternary-color);
+  background-color: var(--primary-color);
+  color: var(--clr-main-font);
 }
 
 /* Upper Navigation */
@@ -51,7 +53,7 @@ body {
 
 .upper-navigation .menu li a {
   text-decoration: none;
-  color: var(--tertiary-color);
+  color: var(--clr-main-font);
   font-size: var(--fs-menu-item);
   font-weight: bold;
 }
@@ -87,7 +89,7 @@ body {
   justify-content: space-around;
   align-items: center;
   padding: 5em 10em;
-  height: 35em;
+  height: var(--height-first-section);
   gap: 2em;
 }
 
@@ -110,6 +112,8 @@ body {
   height: 100%;
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   background-image: url("../assets/images/flower-shop/flower-shop-center-image.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -118,7 +122,8 @@ body {
 
 /* LEFT TEXT */
 
-#first-section .left {
+#first-section .left,
+#first-section .right {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,13 +134,13 @@ body {
 .left .title {
   text-transform: uppercase;
   font-size: var(--fs-big-text);
-  color: var(--quaternary-color);
-  font-weight: 500;
+  color: var(--clr-main-font);
+  font-weight: 600;
 }
 
 .left .paragraph {
   font-size: var(--fs-medium-text);
-  color: var(--quaternary-color);
+  color: var(--clr-main-font);
   font-weight: 300;
 }
 
@@ -149,5 +154,77 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.25s ease-out;
+}
+
+/* RIGHT */
+
+.right .icon-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.icon-row .icon-container {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  cursor: pointer;
+  padding: 0.8em;
+  border-radius: 20%;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.icon-container img {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.icon-row .text {
+  font-size: var(--fs-menu-item);
+  color: var(--clr-main-font);
+  font-weight: bold;
+}
+
+/* SECOND SECTION */
+
+#second-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 5em 10em;
+  height: var(--height-second-section);
+  background-color: var(--tertiary-color);
+  border-top: 1px solid var(--clr-main-font);
+  border-bottom: 1px solid var(--clr-main-font);
+  color: var(--primary-color);
+  gap: 2em;
+}
+
+#second-section .title {
+  font-size: var(--fs-big-text);
+  font-weight: 600;
+}
+
+#second-section .paragraph {
+  font-size: var(--fs-medium-text);
+  font-weight: 300;
+  text-align: center;
+}
+
+#second-section .button {
+  padding: 0.5em 1.5em;
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+  font-size: var(--fs-menu-item);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2em;
   transition: background-color 0.25s ease-out;
 }
