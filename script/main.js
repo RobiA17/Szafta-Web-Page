@@ -1,12 +1,6 @@
 $(document).ready(function () {
   const hamburger = $(".checkbox");
   const mobileNav = $(".mobile-nav");
-  const coffinFolder = "../assets/images/coffins/";
-  const gravestoneFolder = "../assets/images/gravestones/";
-  const wreathFolder = "../assets/images/wreaths/";
-  const coffinSlides = $("#coffin-slides");
-  const gravestoneSlides = $("#gravestone-slides");
-  const wreathSlides = $("#wreath-slides");
   const nextPageButtonCoffin = $("#next");
   const prevPageButtonCoffin = $("#prev");
   const nextPageButtonGravestone = $("#next-gravestone");
@@ -14,72 +8,14 @@ $(document).ready(function () {
   const nextPageButtonWreath = $("#next-wreath");
   const prevPageButtonWreath = $("#prev-wreath");
   const mobileNavItems = $(".mobile-nav-items");
-  const hungarian = $(".hungarian");
-  const romanian = $(".romanian");
   const COFFIN_NUMBER = 16;
   const GRAVESTONE_NUMBER = 11;
   const WREATH_NUMBER = 14;
-  const i18n = $.i18n();
+  const slider = $(".slider");
 
   /*
    * Locale related functions
    */
-
-  function getLocale() {
-    if (!localStorage.getItem("language")) {
-      return "";
-    } else {
-      return localStorage.getItem("language");
-    }
-  }
-
-  function changeLocale() {
-    const locale = getLocale();
-    console.log(locale);
-    if (locale !== "") {
-      i18n.locale = locale;
-      if (locale === "hu") {
-        romanian.addClass("appear");
-        hungarian.removeClass("appear");
-      } else {
-        hungarian.addClass("appear");
-        romanian.removeClass("appear");
-      }
-    } else {
-      window.localStorage.setItem("language", "hu");
-      hungarian.addClass("appear");
-    }
-  }
-
-  function setLocale(locale) {
-    window.localStorage.setItem("language", locale);
-    changeLocale();
-    location.reload();
-  }
-
-  function loadLanguge() {
-    i18n
-      .load({
-        hu: `./script/i18n/hu.json`,
-        ro: `./script/i18n/ro.json`,
-      })
-      .done(() => {
-        changeLocale();
-        $("body").i18n();
-        $("head").i18n();
-      });
-  }
-
-  hungarian.click(function () {
-    console.log("hu");
-    setLocale("hu");
-  });
-  romanian.click(() => {
-    console.log("ro");
-    setLocale("ro");
-  });
-
-  loadLanguge();
 
   /*
    * Mobile navigation related functions
@@ -117,12 +53,17 @@ $(document).ready(function () {
   }
 
   // Function to load images from a folder
-  function loadImagesFromFolder(folderPath, numberOfImages) {
+  function loadImagesFromFolder(
+    folderPath,
+    numberOfImages,
+    containerId = null
+  ) {
     const imageAnnotation = folderPath.split("/").slice(-1)[0];
-    console.log(imageAnnotation);
+    const divName = containerId ? containerId : imageAnnotation + "-slides";
+
     for (var i = 1; i <= numberOfImages; i++) {
       var imageUrl = `${folderPath}/${imageAnnotation}${i}.jpg`;
-      loadDiv(`${imageAnnotation}-slides`, imageUrl, i == 1, i);
+      loadDiv(divName, imageUrl, i == 1, i);
     }
   }
 

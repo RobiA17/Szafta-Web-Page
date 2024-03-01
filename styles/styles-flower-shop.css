@@ -43,7 +43,10 @@ body {
 
 .upper-navigation .menu {
   display: flex;
-  justify-content: space-around;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20%;
   flex-basis: 66.66%;
 }
 
@@ -58,7 +61,7 @@ body {
   font-weight: bold;
 }
 
-.upper-navigation .menu li::after {
+div > a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -71,9 +74,14 @@ body {
   transition: transform 0.25s ease-out;
 }
 
-.upper-navigation .menu li:hover::after {
+div > a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+ul > li {
+  display: inline-block;
+  /* You can also add some margins here to make it look prettier */
 }
 
 /* BODY */
@@ -107,7 +115,8 @@ body {
   align-items: center;
 }
 
-#first-section .image-holder {
+#first-section .image-holder,
+.slider .image-holder {
   width: 100%;
   height: 100%;
   border-top-left-radius: 100%;
@@ -144,10 +153,11 @@ body {
   font-weight: 300;
 }
 
-.left .button {
+.left .button,
+li .button {
   padding: 0.5em 1.5em;
   background-color: var(--tertiary-color);
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   font-size: var(--fs-menu-item);
   font-weight: bold;
   text-transform: uppercase;
@@ -197,7 +207,6 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 5em 10em;
-  height: var(--height-second-section);
   background-color: var(--tertiary-color);
   border-top: 1px solid var(--clr-main-font);
   border-bottom: 1px solid var(--clr-main-font);
@@ -227,4 +236,56 @@ body {
   cursor: pointer;
   margin-top: 2em;
   transition: background-color 0.25s ease-out;
+}
+
+/* THIRD SECTION */
+
+#third-section {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding: 5em 5em;
+  gap: 2em;
+}
+
+#third-section .bouquets,
+#third-section .wreaths {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.bouquets .title,
+.wreaths .title {
+  font-size: var(--fs-big-text);
+  font-weight: 600;
+  padding-bottom: 2em;
+}
+
+/* IMAGE SLIDER */
+
+.slider {
+  height: var(--height-first-section);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2em;
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider .image-holder {
+  flex: 1 0 30%;
 }
