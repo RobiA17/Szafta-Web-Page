@@ -643,6 +643,16 @@ li .button {
     width: 15em !important;
     flex: 1 0 70% !important;
   }
+
+  .mobile-nav {
+    top: 5rem;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .mobile-nav {
+    top: 6rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -677,6 +687,11 @@ li .button {
     width: 10em !important;
     flex: 1 0 85% !important;
   }
+
+  .right {
+    display: flex !important;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 350px) {
@@ -687,10 +702,5 @@ li .button {
 
   .button {
     padding: 1em 1em !important;
-  }
-
-  .right {
-    display: flex !important;
-    flex-direction: column;
   }
 }
