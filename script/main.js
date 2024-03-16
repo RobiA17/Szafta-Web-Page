@@ -11,7 +11,6 @@ $(document).ready(function () {
   const COFFIN_NUMBER = 16;
   const GRAVESTONE_NUMBER = 11;
   const WREATH_NUMBER = 14;
-  const slider = $(".slider");
 
   /*
    * Locale related functions

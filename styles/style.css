@@ -1146,26 +1146,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-/* FLOWER SHOP */
-
-video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-#text-over-video {
-  color: "white";
-  font-weight: bold;
-  text-align: center;
-  font-size: 6rem;
-  border: 2px solid red;
-  z-index: 1;
-}

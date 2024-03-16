@@ -3,6 +3,18 @@ $(document).ready(function () {
 
   const bouquetSlider = document.getElementById("bouquet-slider");
   const wreathSlider = document.getElementById("wreath-slider");
+  const hamburger = $(".checkbox");
+  const mobileNav = $(".mobile-nav");
+  const mobileNavItems = $(".mobile-nav-items");
+
+  hamburger.click(function () {
+    mobileNav.toggleClass("open");
+  });
+
+  mobileNavItems.click(function () {
+    hamburger.prop("checked", false);
+    mobileNav.toggleClass("open");
+  });
 
   function loadImagesFromFolder(
     folderPath,
